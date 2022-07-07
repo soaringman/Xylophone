@@ -4,6 +4,11 @@
 //
 //  Created by Алексей Гуляев on 05.07.2022.
 //
+// Позднее доделать это приложение так что бы после нажатия у меня
+// в командной строке печаталось слово старт, проигрывался звук и спустя
+// 2 секунды печаталось Конец. При этом кнопка при нажатии меняла прозначность
+// на половину и при отпускании кнопки прозрачность возращалась в исходное
+// значение
 
 import UIKit
 import AVFoundation
@@ -12,8 +17,12 @@ class ViewController: UIViewController {
     
     var player: AVAudioPlayer?
     @IBAction func keyPressed(_ sender: UIButton) {
+//        sender.alpha = 0.5
+//        print("Start")
         guard let text = sender.titleLabel?.text else { return }
-        print(text)
+//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+//            print("End")
+//        })
         playSound(forResource: text)
     }
     
